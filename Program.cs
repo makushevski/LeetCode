@@ -6,7 +6,8 @@ namespace LeetCode
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var nums = new[]{1,2};
+			var c = RemoveDuplicatesEasy.RemoveDuplicates(nums);
 		}
 	}
 }
