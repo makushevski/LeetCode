@@ -6,8 +6,8 @@ namespace LeetCode
 	{
 		static void Main(string[] args)
 		{
-			var nums = new[]{1,2};
-			var c = RemoveDuplicatesEasy.RemoveDuplicates(nums);
+			var prices = new int[]{ 7, 1, 5, 3, 6, 4 };
+			var c = BestTimeToBuyAndSell.MaxProfit(prices);
 		}
 	}
 }

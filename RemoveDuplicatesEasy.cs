@@ -14,46 +14,18 @@
 	{
 		public static int RemoveDuplicates(int[] nums)
 		{
-			if (nums.Length == 1)
+			if (nums.Length == 0)
+				return 0;
+			int j = 0;
+			for (int i = 1; i < nums.Length; i++)
 			{
-				return 1;
-			}
-			for (int i = 0; i < nums.Length - 1; i++)
-			{
-				var current = nums[i];
-				var index = i + 1;
-				while (index < nums.Length && current == nums[index])
+				if (nums[j] != nums[i])
 				{
-					nums[index] = int.MaxValue;
-					index++;
+					nums[j + 1] = nums[i];
+					j++;
 				}
 			}
-
-			Sort(nums);
-			var length = nums.Length;
-			for (int i = 0; i < nums.Length; i++)
-			{
-				if (nums[i] == int.MaxValue)
-				{
-					return i;
-				}
-			}
-
-			return length;
-		}
-
-		private static void Sort(int[] nums)
-		{
-			for (int i = 0; i < nums.Length; i++)
-			for (int j = 0; j < nums.Length; j++)
-			{
-				if (nums[j] > nums[i])
-				{
-					var temp = nums[i];
-					nums[i] = nums[j];
-					nums[j] = temp;
-				}
-			}
+			return j + 1;
 		}
 	}
 }
