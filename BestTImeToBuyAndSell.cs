@@ -1,4 +1,6 @@
-﻿namespace LeetCode
+﻿using System;
+
+namespace LeetCode
 {
 	/*Say you have an array prices for which the ith element is the price of a given stock on day i.
 	   
@@ -14,7 +16,12 @@
 	{
 		public static int MaxProfit(int[] prices)
 		{
-
+			var profit = 0;
+			for (var i = 1; i < prices.Length; i++)
+			{
+				profit += Math.Max(prices[i] - prices[i - 1], 0);
+			}
+			return profit;
 		}
 	}
 }
